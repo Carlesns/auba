@@ -1,11 +1,11 @@
 import { useState, type ReactNode, useMemo } from 'react';
 import { Nav } from './Nav';
 import { Footer } from './Footer';
-import { I18nContext, content, type Locale } from '@/lib/i18n';
+import { I18nContext, bundles, type Locale } from '@/lib/i18n';
 
 export function AubaLayout({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>('es');
-  const value = useMemo(() => ({ locale, t: content[locale], setLocale }), [locale]);
+  const value = useMemo(() => ({ locale, t: bundles[locale], setLocale }), [locale]);
   return (
     <I18nContext.Provider value={value}>
       <div className="min-h-screen flex flex-col bg-bone text-graphite">
