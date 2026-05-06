@@ -109,7 +109,7 @@ function Home() {
           <h2 className="text-3xl md:text-5xl font-light max-w-3xl mb-12">{t.home.isnotTitle}</h2>
           <div className="grid md:grid-cols-2 gap-px bg-bone-deep">
             <div className="bg-bone p-8 md:p-10">
-              <div className="label-tag text-moss">auba es</div>
+              <div className="label-tag text-moss">{t.home.isLabel}</div>
               <ul className="mt-6 space-y-3">
                 {t.home.is.map((i) => (
                   <li key={i} className="font-mono text-base lowercase border-b border-bone-deep pb-2">{i}</li>
@@ -117,7 +117,7 @@ function Home() {
               </ul>
             </div>
             <div className="bg-graphite text-bone p-8 md:p-10">
-              <div className="label-tag !text-bone/60">auba no es</div>
+              <div className="label-tag !text-bone/60">{t.home.isnotLabel}</div>
               <ul className="mt-6 space-y-3">
                 {t.home.isnot.map((i) => (
                   <li key={i} className="font-mono text-base lowercase border-b border-bone/15 pb-2">{i}</li>
