@@ -30,9 +30,9 @@ export const content = {
       ],
       compareTitle: 'el espacio que ocupa auba',
       compare: [
-        { brand: 'low cost', price: '15–20€', note: 'funcional, sin propósito ni trazabilidad', highlight: false },
-        { brand: 'grandes marcas', price: '60–90€', note: 'pagas imagen, no producto', highlight: false },
-        { brand: 'premium', price: '90–120€', note: 'buen producto, precio inaccesible', highlight: false },
+        { brand: 'deportivo masivo', price: '15–20€', note: 'funcional, sin propósito ni trazabilidad', highlight: false },
+        { brand: 'lifestyle deportivo', price: '60–90€', note: 'pagas imagen, no producto', highlight: false },
+        { brand: 'técnico premium', price: '90–120€', note: 'buen producto, precio inaccesible', highlight: false },
         { brand: 'auba', price: '72€', note: 'función + propósito + trazabilidad', highlight: true },
       ],
       isnotTitle: 'lo que auba es y lo que no es nunca',
@@ -75,7 +75,7 @@ export const content = {
       ],
       whyTitle: 'por qué este blend',
       whyBody:
-        'El merino es naturalmente antimicrobiano: no retiene olor aunque sudes. El Tencel aporta frescor y caída. Juntos resuelven anti-olor, comodidad y sostenibilidad sin tratamientos químicos. Manga corta porque lanzamos en verano. La manga larga llegará en año 2.',
+        'El merino es naturalmente antimicrobiano: la lana neutraliza las bacterias responsables del olor, así que puedes entrenar varias sesiones sin lavar la prenda. El Tencel aporta frescor, caída y una resistencia mecánica que el merino puro no tiene — juntos alargan la vida útil de la camiseta varios años. Cero tratamientos químicos, cero microplásticos. Manga corta porque lanzamos en verano. La manga larga llegará en año 2.',
     },
     transparency: {
       title: 'transparencia radical',
@@ -155,9 +155,9 @@ export const content = {
       ],
       compareTitle: 'where auba sits',
       compare: [
-        { brand: 'low cost', price: '€15–20', note: 'functional, no purpose, no traceability', highlight: false },
-        { brand: 'big brands', price: '€60–90', note: 'you pay for image, not product', highlight: false },
-        { brand: 'premium', price: '€90–120', note: 'good product, inaccessible price', highlight: false },
+        { brand: 'mass sport', price: '€15–20', note: 'functional, no purpose, no traceability', highlight: false },
+        { brand: 'sport lifestyle', price: '€60–90', note: 'you pay for image, not product', highlight: false },
+        { brand: 'technical premium', price: '€90–120', note: 'good product, inaccessible price', highlight: false },
         { brand: 'auba', price: '€72', note: 'function + purpose + traceability', highlight: true },
       ],
       isnotTitle: 'what auba is and what it never is',
@@ -200,7 +200,7 @@ export const content = {
       ],
       whyTitle: 'why this blend',
       whyBody:
-        'Merino is naturally antimicrobial: it does not retain odor even when you sweat. Tencel adds coolness and drape. Together they solve anti-odor, comfort and sustainability with no chemical treatments. Short sleeve because we launch in summer. Long sleeve will arrive in year two.',
+        'Merino is naturally antimicrobial: the wool neutralizes the bacteria responsible for odor, so you can train several sessions without washing. Tencel adds coolness, drape and a mechanical resistance pure merino lacks — together they extend the t-shirt lifespan by years. Zero chemical treatments, zero microplastics. Short sleeve because we launch in summer. Long sleeve will arrive in year two.',
     },
     transparency: {
       title: 'radical transparency',
