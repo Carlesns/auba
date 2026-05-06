@@ -49,6 +49,10 @@ export const content = {
       waitlistTitle: 'sé de las primeras en llevarla',
       waitlistBody:
         'Tirada inicial de 400 unidades. Producción en Braga, Portugal. Lanzamiento verano 2026. Sin spam, un solo correo cuando esté lista.',
+      priceIsBrand: 'el precio es parte de la marca.',
+      viewBreakdown: 'ver desglose completo →',
+      isLabel: 'auba es',
+      isnotLabel: 'auba no es',
     },
     waitlist: {
       label: 'tu correo',
