@@ -181,6 +181,10 @@ export const content = {
       waitlistTitle: 'be among the first to wear it',
       waitlistBody:
         'First run of 400 units. Made in Braga, Portugal. Launching summer 2026. No spam, one email when ready.',
+      priceIsBrand: 'price is part of the brand.',
+      viewBreakdown: 'see full breakdown →',
+      isLabel: 'auba is',
+      isnotLabel: 'auba is not',
     },
     waitlist: {
       label: 'your email',
