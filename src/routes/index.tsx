@@ -10,7 +10,7 @@ export const Route = createFileRoute('/')({
       { title: 'auba — ropa técnica honesta · barcelona' },
       { name: 'description', content: 'Una camiseta merino/tencel a 72€. Fabricada en Portugal. Desglose público de costes. Únete a la lista de espera.' },
       { property: 'og:title', content: 'auba — ropa técnica honesta' },
-      { property: 'og:description', content: 'Decathlon te da funcional a 15€. Nike te da marca a 90€. Auba te da los dos.' },
+      { property: 'og:description', content: 'Ropa honesta. Hecha para sudar y no oler. Dura porque debe durar.' },
     ],
   }),
   component: () => (
