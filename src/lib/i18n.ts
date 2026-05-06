@@ -155,9 +155,9 @@ export const content = {
       ],
       compareTitle: 'where auba sits',
       compare: [
-        { brand: 'low cost', price: '€15–20', note: 'functional, no purpose, no traceability', highlight: false },
-        { brand: 'big brands', price: '€60–90', note: 'you pay for image, not product', highlight: false },
-        { brand: 'premium', price: '€90–120', note: 'good product, inaccessible price', highlight: false },
+        { brand: 'mass sport', price: '€15–20', note: 'functional, no purpose, no traceability', highlight: false },
+        { brand: 'sport lifestyle', price: '€60–90', note: 'you pay for image, not product', highlight: false },
+        { brand: 'technical premium', price: '€90–120', note: 'good product, inaccessible price', highlight: false },
         { brand: 'auba', price: '€72', note: 'function + purpose + traceability', highlight: true },
       ],
       isnotTitle: 'what auba is and what it never is',
