@@ -10,7 +10,7 @@ export const Route = createFileRoute('/producto')({
       { title: 'camiseta merino/tencel · 72€ — auba' },
       { name: 'description', content: 'Camiseta técnica manga corta. Merino ZQ + Tencel Lyocell. Fabricada en Braga, Portugal. 72€ con desglose público de costes.' },
       { property: 'og:title', content: 'camiseta merino/tencel · 72€' },
-      { property: 'og:description', content: 'Anti-olor, discreta, técnica. Tirada inicial de 400 unidades.' },
+      { property: 'og:description', content: 'Anti-olor, técnica, duradera. Tirada inicial de 400 unidades.' },
     ],
   }),
   component: () => (
