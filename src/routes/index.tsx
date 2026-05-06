@@ -93,10 +93,10 @@ function Home() {
         <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-20 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="label-tag">{t.transparency.title}</div>
-            <h2 className="text-3xl md:text-5xl font-light mt-3 max-w-md">el precio es parte de la marca.</h2>
+            <h2 className="text-3xl md:text-5xl font-light mt-3 max-w-md">{t.home.priceIsBrand}</h2>
             <p className="mt-6 text-sm text-graphite/75 leading-relaxed max-w-md">{t.transparency.lead}</p>
             <Link to="/transparencia" className="inline-block mt-8 label-tag border-b border-graphite hover:text-moss hover:border-moss">
-              ver desglose completo →
+              {t.home.viewBreakdown}
             </Link>
           </div>
           <CostBreakdown />
