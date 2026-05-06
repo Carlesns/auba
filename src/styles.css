@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=DM+Mono:wght@300;400;500&display=swap');
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -8,8 +9,6 @@
  * Three colors only: blanco roto, verde musgo, negro grafito.
  * Typography: Outfit (headlines, all lowercase) + DM Mono (data, labels, prices).
  */
-
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=DM+Mono:wght@300;400;500&display=swap');
 
 @theme inline {
   --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
