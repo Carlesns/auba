@@ -261,10 +261,11 @@ export const content = {
   },
 } as const;
 
-type Bundle = typeof content['es'];
+export type Bundle = (typeof content)['es'];
+export const bundles: Record<Locale, Bundle> = content as unknown as Record<Locale, Bundle>;
 export const I18nContext = createContext<{ locale: Locale; t: Bundle; setLocale: (l: Locale) => void }>({
   locale: 'es',
-  t: content.es,
+  t: bundles.es,
   setLocale: () => {},
 });
 
