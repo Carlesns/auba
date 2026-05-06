@@ -30,9 +30,9 @@ export const content = {
       ],
       compareTitle: 'el espacio que ocupa auba',
       compare: [
-        { brand: 'low cost', price: '15–20€', note: 'funcional, sin propósito ni trazabilidad', highlight: false },
-        { brand: 'grandes marcas', price: '60–90€', note: 'pagas imagen, no producto', highlight: false },
-        { brand: 'premium', price: '90–120€', note: 'buen producto, precio inaccesible', highlight: false },
+        { brand: 'deportivo masivo', price: '15–20€', note: 'funcional, sin propósito ni trazabilidad', highlight: false },
+        { brand: 'lifestyle deportivo', price: '60–90€', note: 'pagas imagen, no producto', highlight: false },
+        { brand: 'técnico premium', price: '90–120€', note: 'buen producto, precio inaccesible', highlight: false },
         { brand: 'auba', price: '72€', note: 'función + propósito + trazabilidad', highlight: true },
       ],
       isnotTitle: 'lo que auba es y lo que no es nunca',
