@@ -6,10 +6,10 @@ export function CostBreakdown() {
   const max = 47;
   return (
     <div className="border border-graphite">
-      <div className="bg-graphite text-bone px-6 py-4 flex items-baseline justify-between">
+      <div className="bg-graphite text-bone px-6 py-4 flex items-baseline justify-between gap-4">
         <div>
-          <div className="label-tag !text-bone/60">{t.product.title}</div>
-          <div className="text-lg font-light lowercase mt-0.5">camiseta merino / tencel</div>
+          <div className="label-tag !text-bone/60">{t.transparency.breakdownTitle}</div>
+          <div className="text-lg font-light lowercase mt-0.5">{t.product.title}</div>
         </div>
         <div className="font-mono text-2xl">{t.product.price}</div>
       </div>
@@ -21,8 +21,8 @@ export function CostBreakdown() {
             <li key={label} className="px-6 py-4 grid grid-cols-[1fr_auto] gap-x-6 items-center">
               <div>
                 <div className="text-sm">{label}</div>
-                <div className="mt-2 h-px bg-bone-deep relative overflow-hidden">
-                  <div className="absolute inset-y-0 left-0 bg-moss" style={{ width: `${pct}%`, height: 1 }} />
+                <div className="mt-2 h-1 bg-bone-deep relative overflow-hidden">
+                  <div className="absolute inset-y-0 left-0 bg-moss" style={{ width: `${pct}%` }} />
                 </div>
               </div>
               <div className="font-mono text-sm">{val}</div>

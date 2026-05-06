@@ -49,6 +49,10 @@ export const content = {
       waitlistTitle: 'sé de las primeras en llevarla',
       waitlistBody:
         'Tirada inicial de 400 unidades. Producción en Braga, Portugal. Lanzamiento verano 2026. Sin spam, un solo correo cuando esté lista.',
+      priceIsBrand: 'el precio es parte de la marca.',
+      viewBreakdown: 'ver desglose completo →',
+      isLabel: 'auba es',
+      isnotLabel: 'auba no es',
     },
     waitlist: {
       label: 'tu correo',
@@ -177,6 +181,10 @@ export const content = {
       waitlistTitle: 'be among the first to wear it',
       waitlistBody:
         'First run of 400 units. Made in Braga, Portugal. Launching summer 2026. No spam, one email when ready.',
+      priceIsBrand: 'price is part of the brand.',
+      viewBreakdown: 'see full breakdown →',
+      isLabel: 'auba is',
+      isnotLabel: 'auba is not',
     },
     waitlist: {
       label: 'your email',
