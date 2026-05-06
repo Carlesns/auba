@@ -14,6 +14,7 @@ import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ProductoRouteImport } from './routes/producto'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as ListaDeEsperaRouteImport } from './routes/lista-de-espera'
+import { Route as BrandBookRouteImport } from './routes/brand-book'
 import { Route as IndexRouteImport } from './routes/index'
 
 const TransparenciaRoute = TransparenciaRouteImport.update({
@@ -41,6 +42,11 @@ const ListaDeEsperaRoute = ListaDeEsperaRouteImport.update({
   path: '/lista-de-espera',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BrandBookRoute = BrandBookRouteImport.update({
+  id: '/brand-book',
+  path: '/brand-book',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -49,6 +55,7 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/brand-book': typeof BrandBookRoute
   '/lista-de-espera': typeof ListaDeEsperaRoute
   '/manifiesto': typeof ManifiestoRoute
   '/producto': typeof ProductoRoute
@@ -57,6 +64,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/brand-book': typeof BrandBookRoute
   '/lista-de-espera': typeof ListaDeEsperaRoute
   '/manifiesto': typeof ManifiestoRoute
   '/producto': typeof ProductoRoute
@@ -66,6 +74,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/brand-book': typeof BrandBookRoute
   '/lista-de-espera': typeof ListaDeEsperaRoute
   '/manifiesto': typeof ManifiestoRoute
   '/producto': typeof ProductoRoute
@@ -76,6 +85,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/brand-book'
     | '/lista-de-espera'
     | '/manifiesto'
     | '/producto'
@@ -84,6 +94,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/brand-book'
     | '/lista-de-espera'
     | '/manifiesto'
     | '/producto'
@@ -92,6 +103,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/brand-book'
     | '/lista-de-espera'
     | '/manifiesto'
     | '/producto'
@@ -101,6 +113,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BrandBookRoute: typeof BrandBookRoute
   ListaDeEsperaRoute: typeof ListaDeEsperaRoute
   ManifiestoRoute: typeof ManifiestoRoute
   ProductoRoute: typeof ProductoRoute
@@ -145,6 +158,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ListaDeEsperaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/brand-book': {
+      id: '/brand-book'
+      path: '/brand-book'
+      fullPath: '/brand-book'
+      preLoaderRoute: typeof BrandBookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -157,6 +177,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BrandBookRoute: BrandBookRoute,
   ListaDeEsperaRoute: ListaDeEsperaRoute,
   ManifiestoRoute: ManifiestoRoute,
   ProductoRoute: ProductoRoute,

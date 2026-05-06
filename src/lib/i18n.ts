@@ -8,6 +8,7 @@ export const content = {
       manifesto: 'manifiesto',
       product: 'producto',
       transparency: 'transparencia',
+      brandbook: 'brand book',
       about: 'sobre',
       waitlist: 'lista de espera',
     },
