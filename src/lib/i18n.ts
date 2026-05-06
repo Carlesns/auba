@@ -75,7 +75,7 @@ export const content = {
       ],
       whyTitle: 'por qué este blend',
       whyBody:
-        'El merino es naturalmente antimicrobiano: no retiene olor aunque sudes. El Tencel aporta frescor y caída. Juntos resuelven anti-olor, comodidad y sostenibilidad sin tratamientos químicos. Manga corta porque lanzamos en verano. La manga larga llegará en año 2.',
+        'El merino es naturalmente antimicrobiano: la lana neutraliza las bacterias responsables del olor, así que puedes entrenar varias sesiones sin lavar la prenda. El Tencel aporta frescor, caída y una resistencia mecánica que el merino puro no tiene — juntos alargan la vida útil de la camiseta varios años. Cero tratamientos químicos, cero microplásticos. Manga corta porque lanzamos en verano. La manga larga llegará en año 2.',
     },
     transparency: {
       title: 'transparencia radical',
