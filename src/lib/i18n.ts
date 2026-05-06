@@ -200,7 +200,7 @@ export const content = {
       ],
       whyTitle: 'why this blend',
       whyBody:
-        'Merino is naturally antimicrobial: it does not retain odor even when you sweat. Tencel adds coolness and drape. Together they solve anti-odor, comfort and sustainability with no chemical treatments. Short sleeve because we launch in summer. Long sleeve will arrive in year two.',
+        'Merino is naturally antimicrobial: the wool neutralizes the bacteria responsible for odor, so you can train several sessions without washing. Tencel adds coolness, drape and a mechanical resistance pure merino lacks — together they extend the t-shirt lifespan by years. Zero chemical treatments, zero microplastics. Short sleeve because we launch in summer. Long sleeve will arrive in year two.',
     },
     transparency: {
       title: 'radical transparency',
