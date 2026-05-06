@@ -51,7 +51,7 @@ function Product() {
             <div className="label-tag mb-3">{t.product.specsTitle}</div>
             <dl className="border-t border-bone-deep">
               {t.product.specs.map(([k, v]) => (
-                <div key={k} className="grid grid-cols-[140px_1fr] py-3 border-b border-bone-deep gap-4">
+                <div key={k} className="grid grid-cols-1 sm:grid-cols-[140px_1fr] py-3 border-b border-bone-deep gap-1 sm:gap-4">
                   <dt className="font-mono text-xs uppercase tracking-wider text-stone">{k}</dt>
                   <dd className="font-mono text-sm">{v}</dd>
                 </div>
