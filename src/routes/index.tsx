@@ -126,16 +126,18 @@ function Home() {
             </div>
           </div>
 
-          <div className="mt-12 grid md:grid-cols-3 gap-6">
-            <div className="md:col-span-1">
-              <div className="label-tag">{t.home.neverTitle}</div>
+          {t.home.never.length > 0 && (
+            <div className="mt-12 grid md:grid-cols-3 gap-6">
+              <div className="md:col-span-1">
+                <div className="label-tag">{t.home.neverTitle}</div>
+              </div>
+              <ul className="md:col-span-2 space-y-2">
+                {t.home.never.map((n) => (
+                  <li key={n} className="font-mono text-sm py-3 border-b border-bone-deep">— {n}</li>
+                ))}
+              </ul>
             </div>
-            <ul className="md:col-span-2 space-y-2">
-              {t.home.never.map((n) => (
-                <li key={n} className="font-mono text-sm py-3 border-b border-bone-deep">— {n}</li>
-              ))}
-            </ul>
-          </div>
+          )}
         </div>
       </section>
 

@@ -36,7 +36,7 @@ function About() {
           </div>
           <div className="space-y-6">
             <div className="label-tag">{t.about.where}</div>
-            <p className="text-base text-graphite/80 leading-relaxed">{t.about.whereBody}</p>
+            {t.about.whereBody && <p className="text-base text-graphite/80 leading-relaxed">{t.about.whereBody}</p>}
             <div className="hairline" />
             <p className="font-mono text-xs uppercase tracking-wider text-stone leading-relaxed">{t.about.legal}</p>
           </div>
