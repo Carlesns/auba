@@ -40,6 +40,5 @@ export const getWaitlistCount = createServerFn({ method: 'GET' }).handler(async 
     console.error('waitlist count error', error);
     return { count: 0 };
   }
-  // Add a baseline so it never looks empty pre-launch
-  return { count: (count ?? 0) + 247 };
+    return { count: count ?? 0 };
 });
