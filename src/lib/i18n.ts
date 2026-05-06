@@ -134,6 +134,7 @@ export const content = {
       manifesto: 'manifesto',
       product: 'product',
       transparency: 'transparency',
+      brandbook: 'brand book',
       about: 'about',
       waitlist: 'waitlist',
     },
