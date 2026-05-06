@@ -21,8 +21,8 @@ export function CostBreakdown() {
             <li key={label} className="px-6 py-4 grid grid-cols-[1fr_auto] gap-x-6 items-center">
               <div>
                 <div className="text-sm">{label}</div>
-                <div className="mt-2 h-px bg-bone-deep relative overflow-hidden">
-                  <div className="absolute inset-y-0 left-0 bg-moss" style={{ width: `${pct}%`, height: 1 }} />
+                <div className="mt-2 h-1 bg-bone-deep relative overflow-hidden">
+                  <div className="absolute inset-y-0 left-0 bg-moss" style={{ width: `${pct}%` }} />
                 </div>
               </div>
               <div className="font-mono text-sm">{val}</div>
