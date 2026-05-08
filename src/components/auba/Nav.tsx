@@ -9,7 +9,6 @@ export function Nav() {
   const links = [
     { to: '/manifiesto', label: t.nav.manifesto },
     { to: '/producto', label: t.nav.product },
-    { to: '/transparencia', label: t.nav.transparency },
     { to: '/brand-book', label: t.nav.brandbook },
     { to: '/sobre', label: t.nav.about },
   ] as const;

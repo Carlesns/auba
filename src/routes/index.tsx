@@ -1,14 +1,13 @@
-import { createFileRoute, Link } from '@tanstack/react-router';
+import { createFileRoute } from '@tanstack/react-router';
 import { AubaLayout } from '@/components/auba/Layout';
 import { WaitlistForm } from '@/components/auba/WaitlistForm';
-import { CostBreakdown } from '@/components/auba/CostBreakdown';
 import { useI18n } from '@/lib/i18n';
 
 export const Route = createFileRoute('/')({
   head: () => ({
     meta: [
       { title: 'auba — ropa técnica honesta · barcelona' },
-      { name: 'description', content: 'Una camiseta merino/tencel a 72€. Fabricada en Portugal. Desglose público de costes. Únete a la lista de espera.' },
+      { name: 'description', content: 'Ropa técnica honesta. Diseñada en Barcelona. Fabricada en Portugal. Únete a la lista de espera.' },
       { property: 'og:title', content: 'auba — ropa técnica honesta' },
       { property: 'og:description', content: 'Ropa honesta. Hecha para sudar y no oler. Dura porque debe durar.' },
     ],
@@ -42,11 +41,10 @@ function Home() {
             <div className="aspect-[4/5] bg-moss relative overflow-hidden">
               <div className="absolute inset-0 flex items-end p-6">
                 <div className="text-bone">
-                  <div className="font-mono text-xs opacity-70">camiseta merino / tencel · 72€</div>
+                  <div className="font-mono text-xs opacity-70">diseñado en barcelona · hecho en portugal</div>
                   <div className="text-3xl font-light lowercase mt-1">auba</div>
                 </div>
               </div>
-              <div className="absolute top-6 right-6 label-tag !text-bone/60">{t.product.tirada}</div>
             </div>
             <WaitlistForm source="home-hero" />
           </div>
@@ -64,7 +62,6 @@ function Home() {
                 className={`p-8 ${c.highlight ? 'bg-graphite text-bone' : 'bg-bone'}`}
               >
                 <div className={`label-tag ${c.highlight ? '!text-bone/60' : ''}`}>{c.brand}</div>
-                <div className="mt-3 font-mono text-2xl">{c.price}</div>
                 <div className={`mt-6 text-sm leading-relaxed ${c.highlight ? 'text-bone/80' : 'text-graphite/70'}`}>{c.note}</div>
               </div>
             ))}
@@ -88,20 +85,6 @@ function Home() {
         </div>
       </section>
 
-      {/* COST BREAKDOWN PREVIEW */}
-      <section className="border-b border-bone-deep bg-bone-deep/30">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-20 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <div className="label-tag">{t.transparency.title}</div>
-            <h2 className="text-3xl md:text-5xl font-light mt-3 max-w-md">{t.home.priceIsBrand}</h2>
-            <p className="mt-6 text-sm text-graphite/75 leading-relaxed max-w-md">{t.transparency.lead}</p>
-            <Link to="/transparencia" className="inline-block mt-8 label-tag border-b border-graphite hover:text-moss hover:border-moss">
-              {t.home.viewBreakdown}
-            </Link>
-          </div>
-          <CostBreakdown />
-        </div>
-      </section>
 
       {/* IS / IS NOT */}
       <section className="border-b border-bone-deep">

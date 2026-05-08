@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { AubaLayout } from '@/components/auba/Layout';
-import { CostBreakdown } from '@/components/auba/CostBreakdown';
 import { WaitlistForm } from '@/components/auba/WaitlistForm';
 import { useI18n } from '@/lib/i18n';
 
@@ -42,8 +41,7 @@ function Product() {
           <div className="label-tag">{t.nav.product}</div>
           <h1 className="mt-3 text-4xl md:text-5xl font-light lowercase">{t.product.title}</h1>
           <p className="mt-3 text-graphite/70">{t.product.subtitle}</p>
-          <div className="mt-8 flex items-baseline gap-4">
-            <div className="font-mono text-4xl">{t.product.price}</div>
+          <div className="mt-8">
             <div className="label-tag">{t.product.tirada}</div>
           </div>
 
@@ -70,10 +68,6 @@ function Product() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1200px] px-6 md:px-10 pb-24">
-        <h2 className="text-2xl md:text-3xl font-light mb-6">{t.transparency.breakdownTitle}</h2>
-        <CostBreakdown />
-      </div>
     </section>
   );
 }
