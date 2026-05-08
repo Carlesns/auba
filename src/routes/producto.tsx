@@ -27,9 +27,9 @@ function Product() {
       <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-16 md:py-24 grid md:grid-cols-2 gap-12">
         <div className="space-y-4">
           <div className="aspect-[4/5] bg-moss flex items-end p-8">
-            <div className="text-bone">
-              <div className="text-4xl font-light lowercase">auba</div>
-              <div className="font-mono text-xs mt-2 opacity-70">producto piloto · merino zq + tencel</div>
+            <div className="text-bone w-full">
+              <Logo className="h-12 w-auto text-bone" />
+              <div className="font-mono text-xs mt-3 opacity-70">producto piloto · merino zq + tencel</div>
             </div>
           </div>
           <div className="grid grid-cols-3 gap-2">
