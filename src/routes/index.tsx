@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { AubaLayout } from '@/components/auba/Layout';
 import { WaitlistForm } from '@/components/auba/WaitlistForm';
+import { Logo } from '@/components/auba/Logo';
 import { useI18n } from '@/lib/i18n';
 
 export const Route = createFileRoute('/')({
