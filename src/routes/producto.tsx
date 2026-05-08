@@ -41,8 +41,7 @@ function Product() {
           <div className="label-tag">{t.nav.product}</div>
           <h1 className="mt-3 text-4xl md:text-5xl font-light lowercase">{t.product.title}</h1>
           <p className="mt-3 text-graphite/70">{t.product.subtitle}</p>
-          <div className="mt-8 flex items-baseline gap-4">
-            <div className="font-mono text-4xl">{t.product.price}</div>
+          <div className="mt-8">
             <div className="label-tag">{t.product.tirada}</div>
           </div>
 
