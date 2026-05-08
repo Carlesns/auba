@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { AubaLayout } from '@/components/auba/Layout';
-import { CostBreakdown } from '@/components/auba/CostBreakdown';
 import { WaitlistForm } from '@/components/auba/WaitlistForm';
 import { useI18n } from '@/lib/i18n';
 
