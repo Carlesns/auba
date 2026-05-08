@@ -14,7 +14,7 @@ export function Footer() {
         <div className="space-y-2 label-tag !text-stone">
           <div><Link to="/manifiesto" className="hover:text-bone">{t.nav.manifesto}</Link></div>
           <div><Link to="/producto" className="hover:text-bone">{t.nav.product}</Link></div>
-          <div><Link to="/transparencia" className="hover:text-bone">{t.nav.transparency}</Link></div>
+          <div><Link to="/brand-book" className="hover:text-bone">{t.nav.brandbook}</Link></div>
           <div><Link to="/sobre" className="hover:text-bone">{t.nav.about}</Link></div>
         </div>
         <div className="space-y-2 label-tag !text-stone">
