@@ -64,7 +64,6 @@ function Home() {
                 className={`p-8 ${c.highlight ? 'bg-graphite text-bone' : 'bg-bone'}`}
               >
                 <div className={`label-tag ${c.highlight ? '!text-bone/60' : ''}`}>{c.brand}</div>
-                <div className="mt-3 font-mono text-2xl">{c.price}</div>
                 <div className={`mt-6 text-sm leading-relaxed ${c.highlight ? 'text-bone/80' : 'text-graphite/70'}`}>{c.note}</div>
               </div>
             ))}
