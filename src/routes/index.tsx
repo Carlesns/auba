@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { AubaLayout } from '@/components/auba/Layout';
 import { WaitlistForm } from '@/components/auba/WaitlistForm';
+import { Logo } from '@/components/auba/Logo';
 import { useI18n } from '@/lib/i18n';
 
 export const Route = createFileRoute('/')({
@@ -40,9 +41,9 @@ function Home() {
           <div className="md:col-span-5 space-y-6">
             <div className="aspect-[4/5] bg-moss relative overflow-hidden">
               <div className="absolute inset-0 flex items-end p-6">
-                <div className="text-bone">
+                <div className="text-bone w-full">
                   <div className="font-mono text-xs opacity-70">diseñado en barcelona · hecho en portugal</div>
-                  <div className="text-3xl font-light lowercase mt-1">auba</div>
+                  <Logo className="mt-3 h-10 w-auto text-bone" />
                 </div>
               </div>
             </div>
