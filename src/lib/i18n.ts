@@ -169,9 +169,9 @@ export const content = {
       never: [] as string[],
       waitlistTitle: 'be among the first to wear it',
       waitlistBody:
-        'First run of 400 units. Made in Portugal. One email when ready.',
-      priceIsBrand: 'price is part of the brand.',
-      viewBreakdown: 'see full breakdown →',
+        'We start with a t-shirt. More garments will follow. One email when the first run is ready.',
+      priceIsBrand: '',
+      viewBreakdown: '',
       isLabel: 'auba is',
       isnotLabel: 'auba is not',
     },
