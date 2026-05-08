@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { useI18n } from '@/lib/i18n';
+import { Logo } from './Logo';
 
 export function Nav() {
   const { t, locale, setLocale } = useI18n();
