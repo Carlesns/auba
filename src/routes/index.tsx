@@ -41,11 +41,10 @@ function Home() {
             <div className="aspect-[4/5] bg-moss relative overflow-hidden">
               <div className="absolute inset-0 flex items-end p-6">
                 <div className="text-bone">
-                  <div className="font-mono text-xs opacity-70">camiseta merino / tencel · 72€</div>
+                  <div className="font-mono text-xs opacity-70">diseñado en barcelona · hecho en portugal</div>
                   <div className="text-3xl font-light lowercase mt-1">auba</div>
                 </div>
               </div>
-              <div className="absolute top-6 right-6 label-tag !text-bone/60">{t.product.tirada}</div>
             </div>
             <WaitlistForm source="home-hero" />
           </div>
