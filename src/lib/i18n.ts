@@ -197,7 +197,6 @@ export const content = {
         ['certification', 'zq · oeko-tex'],
         ['weight', '160 g/m²'],
         ['finish', 'flat seams, no exterior labels'],
-        ['retail price', '€72'],
       ],
       whyTitle: 'why this blend',
       whyBody:
