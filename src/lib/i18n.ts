@@ -43,9 +43,9 @@ export const content = {
       never: [] as string[],
       waitlistTitle: 'sé de los primeros en llevarla',
       waitlistBody:
-        'Primera tirada de 400 unidades. Fabricadas en Portugal. Un solo correo cuando estén listas.',
-      priceIsBrand: 'el precio es parte de la marca.',
-      viewBreakdown: 'ver desglose completo →',
+        'Empezamos por una camiseta. Después vendrán otras prenda. Un solo correo cuando la primera tirada esté lista.',
+      priceIsBrand: '',
+      viewBreakdown: '',
       isLabel: 'auba es',
       isnotLabel: 'auba no es',
     },
