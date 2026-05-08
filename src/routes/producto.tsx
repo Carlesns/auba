@@ -68,10 +68,6 @@ function Product() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-[1200px] px-6 md:px-10 pb-24">
-        <h2 className="text-2xl md:text-3xl font-light mb-6">{t.transparency.breakdownTitle}</h2>
-        <CostBreakdown />
-      </div>
     </section>
   );
 }
