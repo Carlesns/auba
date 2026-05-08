@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import { useI18n } from '@/lib/i18n';
+import { Logo } from './Logo';
 
 export function Footer() {
   const { t } = useI18n();
