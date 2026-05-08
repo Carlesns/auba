@@ -9,8 +9,8 @@ export function Footer() {
     <footer className="bg-graphite text-bone mt-32">
       <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-16 grid gap-10 md:grid-cols-4">
         <div className="md:col-span-2">
-          <div className="text-3xl font-light lowercase">{t.footer.brand}</div>
-          <p className="mt-2 label-tag !text-stone">{t.footer.sub}</p>
+          <Logo className="h-8 w-auto text-bone" />
+          <p className="mt-4 label-tag !text-stone">{t.footer.sub}</p>
         </div>
         <div className="space-y-2 label-tag !text-stone">
           <div><Link to="/manifiesto" className="hover:text-bone">{t.nav.manifesto}</Link></div>
