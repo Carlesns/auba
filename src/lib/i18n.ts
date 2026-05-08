@@ -72,7 +72,6 @@ export const content = {
         ['certificación', 'zq · oeko-tex'],
         ['gramaje', '160 g/m²'],
         ['acabado', 'costuras planas, sin etiquetas exteriores'],
-        ['precio venta', '72€'],
       ],
       whyTitle: 'por qué este blend',
       whyBody:
