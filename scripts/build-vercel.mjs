@@ -19,7 +19,12 @@ copyFileSync('scripts/vercel-handler.mjs', '.vercel/output/functions/index.func/
 // 5. Copy client assets to static
 cpSync('dist/client', '.vercel/output/static', { recursive: true });
 
-// 6. Vercel function config
+// 6. package.json con type:module para que Node.js cargue los ESM
+writeFileSync('.vercel/output/functions/index.func/package.json', JSON.stringify({
+  type: 'module',
+}, null, 2));
+
+// 7. Vercel function config
 writeFileSync('.vercel/output/functions/index.func/.vc-config.json', JSON.stringify({
   runtime: 'nodejs22.x',
   handler: 'vercel-handler.mjs',
