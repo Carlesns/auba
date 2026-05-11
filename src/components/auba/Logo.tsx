@@ -4,7 +4,7 @@ type LogoProps = {
   title?: string;
 };
 
-export function Logo({ className, strokeWidth = 12, title = 'auba' }: LogoProps) {
+export function Logo({ className, strokeWidth = 12, title = 'auva' }: LogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -17,9 +17,9 @@ export const content = {
       city: 'barcelona',
       hero1: 'ropa honesta.',
       hero2: 'hecha para sudar y no oler.',
-      hero3: 'dura porque debe durar.',
+      hero3: 'diseñada para quedarse.',
       heroBody:
-        'Podías pagar poco y conformarte. O pagar mucho por el logo. Auba es la tercera opción: función real, origen trazable, precio justo.',
+        'Podías pagar poco y conformarte. O pagar mucho por el logo.\nAuva es la tercera opción: función real, origen trazable, precio justo.',
       ctaJoin: 'únete a la lista de espera',
       ctaProduct: 'ver producto',
       pillars: 'cuatro decisiones, no negociables',
@@ -29,14 +29,14 @@ export const content = {
         { k: '03', t: 'sostenibilidad estructural', d: 'fibras certificadas. Producto duradero.' },
         { k: '04', t: 'trazabilidad pública', d: 'sabes quién hace cada prenda, dónde y con qué materiales.' },
       ],
-      compareTitle: 'el espacio que ocupa auba',
+      compareTitle: 'el espacio que ocupa auva',
       compare: [
         { brand: 'deportivo masivo', price: '', note: 'funcional, sin propósito ni trazabilidad', highlight: false },
         { brand: 'lifestyle deportivo', price: '', note: 'pagas imagen, no producto', highlight: false },
         { brand: 'técnico premium', price: '', note: 'buen producto, marca inaccesible', highlight: false },
-        { brand: 'auba', price: '', note: 'función + propósito + trazabilidad', highlight: true },
+        { brand: 'auva', price: '', note: 'función + propósito + trazabilidad', highlight: true },
       ],
-      isnotTitle: 'lo que auba es y lo que no es nunca',
+      isnotTitle: 'lo que auva es y lo que no es nunca',
       is: ['transparente', 'técnica', 'honesta', 'duradera', 'mediterránea'],
       isnot: ['aspiracional', 'ruidosa', 'de temporada', 'de oferta permanente', 'desechable'],
       neverTitle: '',
@@ -46,8 +46,8 @@ export const content = {
         'Empezamos por una camiseta. Después vendrán otras prenda. Un solo correo cuando la primera tirada esté lista.',
       priceIsBrand: '',
       viewBreakdown: '',
-      isLabel: 'auba es',
-      isnotLabel: 'auba no es',
+      isLabel: 'auva es',
+      isnotLabel: 'auva no es',
     },
     waitlist: {
       label: 'tu correo',
@@ -88,7 +88,7 @@ export const content = {
         ['packaging · papel sin blanquear', '2€'],
         ['logística y envíos', '3€'],
         ['plataforma y operaciones', '3€'],
-        ['margen auba · estructura e inversión', '47€'],
+        ['margen auva · estructura e inversión', '47€'],
       ],
       total: 'precio venta · 72€',
       footnote:
@@ -100,7 +100,7 @@ export const content = {
     manifesto: {
       title: 'manifiesto',
       lines: [
-        'auba hace ropa técnica honesta.',
+        'auva hace ropa técnica honesta.',
         'honesta con quien la lleva.',
         'honesta con quien la hace.',
         'honesta con el origen de los materiales.',
@@ -114,7 +114,7 @@ export const content = {
       ],
     },
     about: {
-      title: 'sobre auba',
+      title: 'sobre auva',
       lead:
         'Diseñado en Barcelona. Fabricado en Portugal. Para quien hace deporte con criterio y no quiere pagar por cosas que no ve.',
       where: 'barcelona',
@@ -122,7 +122,7 @@ export const content = {
       legal: 'registro oepm clase 25 en curso · cobertura euipo prevista 2026',
     },
     footer: {
-      brand: 'auba',
+      brand: 'auva',
       sub: 'ropa técnica honesta · barcelona',
       legal: 'manual de identidad v1.0',
       lang: 'EN',
@@ -144,7 +144,7 @@ export const content = {
       hero2: 'made to sweat and not smell.',
       hero3: 'built to last because it should.',
       heroBody:
-        'You could pay less and settle. Or pay more for the logo. Auba is the third option: real function, traceable origin, fair price.',
+        'You could pay less and settle. Or pay more for the logo. auva is the third option: real function, traceable origin, fair price.',
       ctaJoin: 'join the waitlist',
       ctaProduct: 'see product',
       pillars: 'four non-negotiable decisions',
@@ -154,14 +154,14 @@ export const content = {
         { k: '03', t: 'structural sustainability', d: 'certified fibers. Built to last.' },
         { k: '04', t: 'public traceability', d: 'you know who makes each garment, where and with which materials.' },
       ],
-      compareTitle: 'where auba sits',
+      compareTitle: 'where auva sits',
       compare: [
         { brand: 'mass sport', price: '', note: 'functional, no purpose, no traceability', highlight: false },
         { brand: 'sport lifestyle', price: '', note: 'you pay for image, not product', highlight: false },
         { brand: 'technical premium', price: '', note: 'good product, inaccessible brand', highlight: false },
-        { brand: 'auba', price: '', note: 'function + purpose + traceability', highlight: true },
+        { brand: 'auva', price: '', note: 'function + purpose + traceability', highlight: true },
       ],
-      isnotTitle: 'what auba is and what it never is',
+      isnotTitle: 'what auva is and what it never is',
       is: ['transparent', 'technical', 'honest', 'durable', 'mediterranean'],
       isnot: ['aspirational', 'loud', 'seasonal', 'permanently on sale', 'disposable'],
       neverTitle: '',
@@ -171,8 +171,8 @@ export const content = {
         'We start with a t-shirt. More garments will follow. One email when the first run is ready.',
       priceIsBrand: '',
       viewBreakdown: '',
-      isLabel: 'auba is',
-      isnotLabel: 'auba is not',
+      isLabel: 'auva is',
+      isnotLabel: 'auva is not',
     },
     waitlist: {
       label: 'your email',
@@ -213,7 +213,7 @@ export const content = {
         ['packaging · unbleached paper', '€2'],
         ['logistics and shipping', '€3'],
         ['platform and operations', '€3'],
-        ['auba margin · structure & investment', '€47'],
+        ['auva margin · structure & investment', '€47'],
       ],
       total: 'retail price · €72',
       footnote:
@@ -225,7 +225,7 @@ export const content = {
     manifesto: {
       title: 'manifesto',
       lines: [
-        'auba makes honest technical clothing.',
+        'auva makes honest technical clothing.',
         'honest with the wearer.',
         'honest with the maker.',
         'honest about the origin of the materials.',
@@ -239,7 +239,7 @@ export const content = {
       ],
     },
     about: {
-      title: 'about auba',
+      title: 'about auva',
       lead:
         'Designed in Barcelona. Made in Portugal. For those who train with criteria and refuse to pay for things they cannot see.',
       where: 'barcelona',
@@ -247,7 +247,7 @@ export const content = {
       legal: 'oepm class 25 registration in progress · euipo coverage planned 2026',
     },
     footer: {
-      brand: 'auba',
+      brand: 'auva',
       sub: 'honest technical clothing · barcelona',
       legal: 'visual identity manual v1.0',
       lang: 'ES',

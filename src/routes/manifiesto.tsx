@@ -6,9 +6,9 @@ import { useI18n } from '@/lib/i18n';
 export const Route = createFileRoute('/manifiesto')({
   head: () => ({
     meta: [
-      { title: 'manifiesto — auba' },
-      { name: 'description', content: 'Auba hace ropa técnica honesta. Honesta con quien la lleva, con quien la hace, con de dónde vienen los materiales.' },
-      { property: 'og:title', content: 'manifiesto — auba' },
+      { title: 'manifiesto — auva' },
+      { name: 'description', content: 'auva hace ropa técnica honesta. Honesta con quien la lleva, con quien la hace, con de dónde vienen los materiales.' },
+      { property: 'og:title', content: 'manifiesto — auva' },
       { property: 'og:description', content: 'No vendemos un estilo de vida. Vendemos una decisión de compra.' },
     ],
   }),

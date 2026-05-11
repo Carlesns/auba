@@ -7,9 +7,9 @@ import { useI18n } from '@/lib/i18n';
 export const Route = createFileRoute('/')({
   head: () => ({
     meta: [
-      { title: 'auba — ropa técnica honesta · barcelona' },
+      { title: 'auva — ropa técnica honesta · barcelona' },
       { name: 'description', content: 'Ropa técnica honesta. Diseñada en Barcelona. Fabricada en Portugal. Únete a la lista de espera.' },
-      { property: 'og:title', content: 'auba — ropa técnica honesta' },
+      { property: 'og:title', content: 'auva — ropa técnica honesta' },
       { property: 'og:description', content: 'Ropa honesta. Hecha para sudar y no oler. Dura porque debe durar.' },
     ],
   }),
@@ -34,7 +34,7 @@ function Home() {
               {t.home.hero2}<br />
               <span className="text-moss">{t.home.hero3}</span>
             </h1>
-            <p className="max-w-xl text-base md:text-lg text-graphite/80 font-light leading-relaxed">
+            <p className="max-w-xl text-base md:text-lg text-graphite/80 font-light leading-relaxed whitespace-pre-line">
               {t.home.heroBody}
             </p>
           </div>
@@ -42,7 +42,7 @@ function Home() {
             <div className="aspect-[4/5] bg-moss relative overflow-hidden">
               <div className="absolute inset-0 flex items-end p-6">
                 <div className="text-bone w-full">
-                  <div className="font-mono text-xs opacity-70">diseñado en barcelona · hecho en portugal</div>
+                  <div className="font-mono text-xs opacity-70">diseñado en barcelona · hecho en barcelona</div>
                   <Logo className="mt-3 h-10 w-auto text-bone" />
                 </div>
               </div>

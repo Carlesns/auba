@@ -8,7 +8,7 @@ export function AubaLayout({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     try {
-      const saved = localStorage.getItem('auba-locale') as Locale | null;
+      const saved = localStorage.getItem('auva-locale') as Locale | null;
       if (saved === 'es' || saved === 'en') setLocaleState(saved);
     } catch {}
   }, []);
@@ -21,7 +21,7 @@ export function AubaLayout({ children }: { children: ReactNode }) {
 
   const setLocale = (l: Locale) => {
     setLocaleState(l);
-    try { localStorage.setItem('auba-locale', l); } catch {}
+    try { localStorage.setItem('auva-locale', l); } catch {}
   };
 
   const value = useMemo(() => ({ locale, t: bundles[locale], setLocale }), [locale]);
