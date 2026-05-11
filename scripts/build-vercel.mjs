@@ -1,5 +1,5 @@
 import { execSync } from 'child_process';
-import { mkdirSync, cpSync, writeFileSync, copyFileSync, rmSync, renameSync, existsSync } from 'fs';
+import { mkdirSync, cpSync, writeFileSync, copyFileSync, rmSync } from 'fs';
 import { build } from 'vite';
 import { fileURLToPath } from 'url';
 import path from 'path';
@@ -19,61 +19,62 @@ rmSync(path.join(root, '.vercel/output'), { recursive: true, force: true });
 mkdirSync(funcDir, { recursive: true });
 mkdirSync(staticDir, { recursive: true });
 
-// 3. Bundle server + ALL npm deps into a single standalone ESM file
-//    (ssr.noExternal: true forces Vite to bundle everything except node: builtins)
-console.log('→ bundling server (full bundle with deps)...');
+// 3. Bundle server + ALL npm deps into self-contained ESM files (.mjs)
+//    All output files get .mjs extension → Node always treats them as ESM
+//    noExternal: true → bundle everything except node: builtins
+console.log('→ bundling server (full bundle, all .mjs)...');
 await build({
   root,
   configFile: false,
   ssr: {
-    noExternal: true,          // bundle ALL npm packages
+    noExternal: true,
     target: 'node',
   },
   build: {
     ssr: path.join(root, 'dist/server/server.js'),
-    outDir: path.join(funcDir, '_build'),
-    emptyOutDir: true,
+    outDir: funcDir,
+    emptyOutDir: false,
     rollupOptions: {
-      external: (id) => id.startsWith('node:') || ['fs','path','os','crypto',
-        'stream','http','https','url','util','events','buffer',
-        'process','child_process','net','tls','dns','readline',
-        'worker_threads','perf_hooks','async_hooks','vm',
-        'string_decoder','querystring','assert','zlib','dgram',
-        'cluster','module','inspector','v8','repl','domain',
-      ].includes(id),
-      output: { format: 'esm' },
+      external: (id) =>
+        id.startsWith('node:') || [
+          'fs', 'path', 'os', 'crypto', 'stream', 'http', 'https', 'url',
+          'util', 'events', 'buffer', 'process', 'child_process', 'net',
+          'tls', 'dns', 'readline', 'worker_threads', 'perf_hooks',
+          'async_hooks', 'vm', 'string_decoder', 'querystring', 'assert',
+          'zlib', 'dgram', 'cluster', 'module', 'inspector', 'v8',
+          'repl', 'domain',
+        ].includes(id),
+      output: {
+        format: 'esm',
+        // Force ALL output files to use .mjs extension
+        // → Node.js always loads them as ESM, no package.json needed
+        entryFileNames: '[name].mjs',
+        chunkFileNames: 'assets/[name]-[hash].mjs',
+      },
     },
     minify: false,
     target: 'node22',
   },
 });
 
-// 4. Rename output to server.mjs (so Node treats it as ESM without package.json)
-const buildDir = path.join(funcDir, '_build');
-const files = (await import('fs')).readdirSync(buildDir);
-const serverFile = files.find(f => f.endsWith('.js') || f.endsWith('.mjs'));
-if (!serverFile) throw new Error('No server bundle found in _build: ' + files.join(', '));
-renameSync(path.join(buildDir, serverFile), path.join(funcDir, 'server.mjs'));
-rmSync(buildDir, { recursive: true, force: true });
-
-// 5. Copy the handler
+// 4. Copy the handler
 console.log('→ copying handler...');
 copyFileSync(
   path.join(root, 'scripts/vercel-handler.mjs'),
   path.join(funcDir, 'vercel-handler.mjs')
 );
 
-// 6. Copy client assets to static
+// 5. Copy client assets to static
 cpSync(path.join(root, 'dist/client'), staticDir, { recursive: true });
 
-// 7. Vercel function config
+// 6. Vercel function config
 writeFileSync(path.join(funcDir, '.vc-config.json'), JSON.stringify({
   runtime: 'nodejs22.x',
   handler: 'vercel-handler.mjs',
   maxDuration: 10,
 }, null, 2));
 
-// 8. Vercel output config (routes)
+// 7. Vercel output config (routes)
 writeFileSync(path.join(root, '.vercel/output/config.json'), JSON.stringify({
   version: 3,
   routes: [
