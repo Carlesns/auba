@@ -1,4 +1,4 @@
-import server from './server.js';
+import server from './server.mjs';
 
 export default async function handler(req, res) {
   try {
