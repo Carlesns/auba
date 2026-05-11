@@ -23,7 +23,7 @@ function Manifesto() {
   const { t } = useI18n();
   return (
     <section>
-      <div className="mx-auto max-w-[900px] px-6 md:px-10 py-20 md:py-32">
+      <div className="mx-auto max-w-[900px] px-6 md:px-10 py-12 md:py-20">
         <div className="label-tag">{t.manifesto.title}</div>
         <div className="mt-8 space-y-1">
           {t.manifesto.lines.map((line, i) =>

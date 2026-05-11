@@ -4,7 +4,7 @@ type LogoProps = {
   title?: string;
 };
 
-export function Logo({ className, strokeWidth = 8, title = 'auba' }: LogoProps) {
+export function Logo({ className, strokeWidth = 12, title = 'auba' }: LogoProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,23 +12,23 @@ export function Logo({ className, strokeWidth = 8, title = 'auba' }: LogoProps) 
       fill="none"
       stroke="currentColor"
       strokeWidth={strokeWidth}
-      strokeLinecap="square"
-      strokeLinejoin="miter"
+      strokeLinecap="round"
+      strokeLinejoin="round"
       role="img"
       aria-label={title}
       className={className}
     >
       <title>{title}</title>
-      <path d="M20,140 L58.99,20" />
-      <path d="M58.99,20 L97.98,140" />
-      <path d="M39.50,80 L78.49,80" />
-      <path d="M125.27,20 L183.76,140" />
-      <path d="M183.76,140 L242.25,20" />
-      <path d="M269.54,20 L308.53,140" />
-      <path d="M308.53,140 L347.52,20" />
-      <path d="M374.81,140 L413.80,20" />
-      <path d="M413.80,20 L452.79,140" />
-      <path d="M394.31,80 L433.30,80" />
+      {/* A */}
+      <path d="M20,140 L58.99,20 L97.98,140" />
+      <line x1="39.50" y1="80" x2="78.49" y2="80" />
+      {/* U */}
+      <path d="M125.27,20 L183.76,140 L242.25,20" />
+      {/* V */}
+      <path d="M269.54,20 L308.53,140 L347.52,20" />
+      {/* A */}
+      <path d="M374.81,140 L413.80,20 L452.79,140" />
+      <line x1="394.31" y1="80" x2="433.30" y2="80" />
     </svg>
   );
 }

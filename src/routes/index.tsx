@@ -26,7 +26,7 @@ function Home() {
     <>
       {/* HERO */}
       <section className="border-b border-bone-deep">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-20 md:py-32 grid md:grid-cols-12 gap-10 items-end">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-8 md:py-20 grid md:grid-cols-12 gap-10 items-start">
           <div className="md:col-span-7 space-y-6">
             <div className="label-tag">{t.home.tagline} · {t.home.city}</div>
             <h1 className="text-5xl md:text-7xl font-light leading-[0.95] tracking-tight">
