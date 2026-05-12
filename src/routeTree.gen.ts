@@ -13,6 +13,7 @@ import { Route as TransparenciaRouteImport } from './routes/transparencia'
 import { Route as SocialKitRouteImport } from './routes/social-kit'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ProductoRouteImport } from './routes/producto'
+import { Route as PitchRouteImport } from './routes/pitch'
 import { Route as ManifiestoRouteImport } from './routes/manifiesto'
 import { Route as ListaDeEsperaRouteImport } from './routes/lista-de-espera'
 import { Route as BrandBookRouteImport } from './routes/brand-book'
@@ -36,6 +37,11 @@ const SobreRoute = SobreRouteImport.update({
 const ProductoRoute = ProductoRouteImport.update({
   id: '/producto',
   path: '/producto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PitchRoute = PitchRouteImport.update({
+  id: '/pitch',
+  path: '/pitch',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ManifiestoRoute = ManifiestoRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/brand-book': typeof BrandBookRoute
   '/lista-de-espera': typeof ListaDeEsperaRoute
   '/manifiesto': typeof ManifiestoRoute
+  '/pitch': typeof PitchRoute
   '/producto': typeof ProductoRoute
   '/sobre': typeof SobreRoute
   '/social-kit': typeof SocialKitRoute
@@ -74,6 +81,7 @@ export interface FileRoutesByTo {
   '/brand-book': typeof BrandBookRoute
   '/lista-de-espera': typeof ListaDeEsperaRoute
   '/manifiesto': typeof ManifiestoRoute
+  '/pitch': typeof PitchRoute
   '/producto': typeof ProductoRoute
   '/sobre': typeof SobreRoute
   '/social-kit': typeof SocialKitRoute
@@ -85,6 +93,7 @@ export interface FileRoutesById {
   '/brand-book': typeof BrandBookRoute
   '/lista-de-espera': typeof ListaDeEsperaRoute
   '/manifiesto': typeof ManifiestoRoute
+  '/pitch': typeof PitchRoute
   '/producto': typeof ProductoRoute
   '/sobre': typeof SobreRoute
   '/social-kit': typeof SocialKitRoute
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/brand-book'
     | '/lista-de-espera'
     | '/manifiesto'
+    | '/pitch'
     | '/producto'
     | '/sobre'
     | '/social-kit'
@@ -107,6 +117,7 @@ export interface FileRouteTypes {
     | '/brand-book'
     | '/lista-de-espera'
     | '/manifiesto'
+    | '/pitch'
     | '/producto'
     | '/sobre'
     | '/social-kit'
@@ -117,6 +128,7 @@ export interface FileRouteTypes {
     | '/brand-book'
     | '/lista-de-espera'
     | '/manifiesto'
+    | '/pitch'
     | '/producto'
     | '/sobre'
     | '/social-kit'
@@ -128,6 +140,7 @@ export interface RootRouteChildren {
   BrandBookRoute: typeof BrandBookRoute
   ListaDeEsperaRoute: typeof ListaDeEsperaRoute
   ManifiestoRoute: typeof ManifiestoRoute
+  PitchRoute: typeof PitchRoute
   ProductoRoute: typeof ProductoRoute
   SobreRoute: typeof SobreRoute
   SocialKitRoute: typeof SocialKitRoute
@@ -162,6 +175,13 @@ declare module '@tanstack/react-router' {
       path: '/producto'
       fullPath: '/producto'
       preLoaderRoute: typeof ProductoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pitch': {
+      id: '/pitch'
+      path: '/pitch'
+      fullPath: '/pitch'
+      preLoaderRoute: typeof PitchRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/manifiesto': {
@@ -200,6 +220,7 @@ const rootRouteChildren: RootRouteChildren = {
   BrandBookRoute: BrandBookRoute,
   ListaDeEsperaRoute: ListaDeEsperaRoute,
   ManifiestoRoute: ManifiestoRoute,
+  PitchRoute: PitchRoute,
   ProductoRoute: ProductoRoute,
   SobreRoute: SobreRoute,
   SocialKitRoute: SocialKitRoute,
