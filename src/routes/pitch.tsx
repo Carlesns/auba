@@ -385,6 +385,7 @@ function Pitch() {
       <div className="deck-count">
         <span id="deck-cur" className="cur">01</span> / {num(12)}
       </div>
+      <a href="/" className="deck-back">← inicio</a>
       <script dangerouslySetInnerHTML={{ __html: PITCH_SCRIPT }} />
     </>
   );
@@ -610,4 +611,6 @@ const css = `
 /* COUNTER */
 .deck-count { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: rgba(244,241,234,0.55); background: rgba(0,0,0,0.2); padding: 6px 14px; border-radius: 2px; pointer-events: none; user-select: none; white-space: nowrap; }
 .deck-count .cur { color: var(--paper); }
+.deck-back { position: fixed; top: 16px; left: 20px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(244,241,234,0.5); text-decoration: none; padding: 6px 10px; z-index: 10; transition: color 0.15s; }
+.deck-back:hover { color: rgba(244,241,234,0.9); }
 `;
