@@ -16,8 +16,8 @@ export const content = {
       tagline: 'ropa técnica honesta',
       city: 'barcelona',
       hero1: 'ropa honesta.',
-      hero2: 'hecha para sudar y no oler.',
-      hero3: 'diseñada para quedarse.',
+      hero2: 'diseñada para quedarse.',
+      hero3: 'el sudor habla de tu esfuerzo, el olor se va.',
       heroBody:
         'Podías pagar poco y conformarte. O pagar mucho por el logo.\nAuva es la tercera opción: función real, origen trazable, precio justo.',
       ctaJoin: 'únete a la lista de espera',
@@ -141,8 +141,8 @@ export const content = {
       tagline: 'honest technical clothing',
       city: 'barcelona',
       hero1: 'honest clothing.',
-      hero2: 'made to sweat and not smell.',
-      hero3: 'built to last because it should.',
+      hero2: 'built to stay.',
+      hero3: 'sweat speaks of effort. the smell doesn\'t.',
       heroBody:
         'You could pay less and settle. Or pay more for the logo. auva is the third option: real function, traceable origin, fair price.',
       ctaJoin: 'join the waitlist',
