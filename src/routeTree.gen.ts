@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TransparenciaRouteImport } from './routes/transparencia'
 import { Route as SocialKitRouteImport } from './routes/social-kit'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as ProductoRouteImport } from './routes/producto'
@@ -17,6 +18,11 @@ import { Route as ListaDeEsperaRouteImport } from './routes/lista-de-espera'
 import { Route as BrandBookRouteImport } from './routes/brand-book'
 import { Route as IndexRouteImport } from './routes/index'
 
+const TransparenciaRoute = TransparenciaRouteImport.update({
+  id: '/transparencia',
+  path: '/transparencia',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SocialKitRoute = SocialKitRouteImport.update({
   id: '/social-kit',
   path: '/social-kit',
@@ -61,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/producto': typeof ProductoRoute
   '/sobre': typeof SobreRoute
   '/social-kit': typeof SocialKitRoute
+  '/transparencia': typeof TransparenciaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -70,6 +77,7 @@ export interface FileRoutesByTo {
   '/producto': typeof ProductoRoute
   '/sobre': typeof SobreRoute
   '/social-kit': typeof SocialKitRoute
+  '/transparencia': typeof TransparenciaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -80,6 +88,7 @@ export interface FileRoutesById {
   '/producto': typeof ProductoRoute
   '/sobre': typeof SobreRoute
   '/social-kit': typeof SocialKitRoute
+  '/transparencia': typeof TransparenciaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,6 +100,7 @@ export interface FileRouteTypes {
     | '/producto'
     | '/sobre'
     | '/social-kit'
+    | '/transparencia'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -100,6 +110,7 @@ export interface FileRouteTypes {
     | '/producto'
     | '/sobre'
     | '/social-kit'
+    | '/transparencia'
   id:
     | '__root__'
     | '/'
@@ -109,6 +120,7 @@ export interface FileRouteTypes {
     | '/producto'
     | '/sobre'
     | '/social-kit'
+    | '/transparencia'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -119,10 +131,18 @@ export interface RootRouteChildren {
   ProductoRoute: typeof ProductoRoute
   SobreRoute: typeof SobreRoute
   SocialKitRoute: typeof SocialKitRoute
+  TransparenciaRoute: typeof TransparenciaRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/transparencia': {
+      id: '/transparencia'
+      path: '/transparencia'
+      fullPath: '/transparencia'
+      preLoaderRoute: typeof TransparenciaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/social-kit': {
       id: '/social-kit'
       path: '/social-kit'
@@ -183,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProductoRoute: ProductoRoute,
   SobreRoute: SobreRoute,
   SocialKitRoute: SocialKitRoute,
+  TransparenciaRoute: TransparenciaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

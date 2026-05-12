@@ -26,6 +26,7 @@ function About() {
         <div className="label-tag">{t.nav.about}</div>
         <h1 className="mt-4 text-4xl md:text-6xl font-light leading-[1.05]">{t.about.title}</h1>
         <p className="mt-8 text-lg md:text-xl text-graphite/85 font-light leading-relaxed max-w-2xl">{t.about.lead}</p>
+        <p className="mt-6 text-base text-graphite/60 font-mono lowercase max-w-2xl">{t.about.closing}</p>
 
         <div className="mt-20 grid md:grid-cols-2 gap-12 items-start">
           <div className="aspect-[4/5] bg-moss flex items-end p-8">

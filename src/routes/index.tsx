@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { AubaLayout } from '@/components/auba/Layout';
 import { WaitlistForm } from '@/components/auba/WaitlistForm';
 import { Logo } from '@/components/auba/Logo';
+import { ComparisonSection } from '@/components/auba/ComparisonSection';
 import { useI18n } from '@/lib/i18n';
 
 export const Route = createFileRoute('/')({
@@ -52,23 +53,8 @@ function Home() {
         </div>
       </section>
 
-      {/* COMPARE */}
-      <section className="border-b border-bone-deep">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-20">
-          <h2 className="text-3xl md:text-5xl font-light max-w-2xl mb-12">{t.home.compareTitle}</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-bone-deep">
-            {t.home.compare.map((c) => (
-              <div
-                key={c.brand}
-                className={`p-8 ${c.highlight ? 'bg-graphite text-bone' : 'bg-bone'}`}
-              >
-                <div className={`label-tag ${c.highlight ? '!text-bone/60' : ''}`}>{c.brand}</div>
-                <div className={`mt-6 text-sm leading-relaxed ${c.highlight ? 'text-bone/80' : 'text-graphite/70'}`}>{c.note}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* COMPARISON */}
+      <ComparisonSection />
 
       {/* PILLARS */}
       <section className="border-b border-bone-deep">
@@ -79,7 +65,8 @@ function Home() {
               <div key={p.k} className="bg-bone p-8 md:p-10">
                 <div className="font-mono text-sm text-stone">{p.k}</div>
                 <div className="mt-3 text-2xl font-light lowercase">{p.t}</div>
-                <p className="mt-3 text-sm text-graphite/75 leading-relaxed">{p.d}</p>
+                <p className="mt-3 text-sm font-medium text-graphite leading-relaxed">{p.d1}</p>
+                <p className="mt-2 text-sm text-graphite/65 leading-relaxed">{p.d2}</p>
               </div>
             ))}
           </div>
