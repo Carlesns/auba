@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Link } from '@tanstack/react-router';
 import { useI18n } from '@/lib/i18n';
 import { Logo } from './Logo';
@@ -8,17 +7,41 @@ const GRAPHITE = '#1a1a1a';
 const STONE = '#9a9488';
 const BORDER = '#e4e0d8';
 
+// Native DOM script — works with or without React hydration
+const MENU_SCRIPT = `(function(){
+  function init(){
+    var btn=document.getElementById('nav-menu-btn');
+    var overlay=document.getElementById('nav-menu-overlay');
+    var wl=document.getElementById('nav-waitlist-btn');
+    if(!btn||!overlay)return;
+    function open(){
+      overlay.style.display='flex';
+      btn.textContent='✕';
+      btn.setAttribute('aria-expanded','true');
+      document.body.style.overflow='hidden';
+      if(wl)wl.style.display='none';
+    }
+    function close(){
+      overlay.style.display='none';
+      btn.textContent='menú';
+      btn.setAttribute('aria-expanded','false');
+      document.body.style.overflow='';
+      if(wl)wl.style.display='';
+    }
+    btn.addEventListener('click',function(){
+      overlay.style.display==='flex'?close():open();
+    });
+    overlay.querySelectorAll('a,button[data-close]').forEach(function(el){
+      el.addEventListener('click',close);
+    });
+  }
+  document.readyState==='loading'
+    ?document.addEventListener('DOMContentLoaded',init)
+    :init();
+})();`;
+
 export function Nav() {
   const { t, locale, setLocale } = useI18n();
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [open]);
-
-  const close = () => setOpen(false);
-  const toggle = () => setOpen(v => !v);
 
   type Section = { group: string; items: { to: string; label: string }[] };
   const sections: Section[] = [
@@ -59,7 +82,7 @@ export function Nav() {
           maxWidth: 1200, margin: '0 auto', padding: '0 24px',
           height: 56, display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         }}>
-          <Link to="/" aria-label="auva — home" onClick={close} style={{ display: 'flex', alignItems: 'center' }}>
+          <Link to="/" aria-label="auva — home" style={{ display: 'flex', alignItems: 'center' }}>
             <Logo className="h-5 w-auto text-graphite" />
           </Link>
 
@@ -73,36 +96,37 @@ export function Nav() {
               {locale === 'es' ? 'en' : 'es'}
             </button>
 
-            {!open && (
-              <Link
-                to="/lista-de-espera"
-                className="hidden sm:inline-block"
-                style={{ fontFamily: 'inherit', fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase', background: GRAPHITE, color: BONE, padding: '6px 12px', textDecoration: 'none' }}
-              >
-                {t.nav.waitlist}
-              </Link>
-            )}
-
-            <button
-              type="button"
-              onClick={toggle}
-              style={{ fontFamily: 'inherit', fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase', background: 'none', border: 'none', cursor: 'pointer', color: GRAPHITE, padding: '4px 0', minWidth: 40, textAlign: 'right' }}
-              aria-expanded={open}
-              aria-label={open ? 'cerrar' : 'menú'}
+            <a
+              id="nav-waitlist-btn"
+              href="/lista-de-espera"
+              className="hidden sm:inline-block"
+              style={{ fontFamily: 'inherit', fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase', background: GRAPHITE, color: BONE, padding: '6px 12px', textDecoration: 'none' }}
             >
-              {open ? '✕' : 'menú'}
+              {t.nav.waitlist}
+            </a>
+
+            {/* Menu toggle — toggled via native script, not React state */}
+            <button
+              id="nav-menu-btn"
+              type="button"
+              style={{ fontFamily: 'inherit', fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase', background: 'none', border: 'none', cursor: 'pointer', color: GRAPHITE, padding: '4px 0', minWidth: 40, textAlign: 'right' }}
+              aria-expanded="false"
+              aria-label="abrir menú"
+            >
+              menú
             </button>
           </div>
         </div>
       </header>
 
-      {/* ── Full-screen overlay ── always in DOM, shown/hidden via display */}
+      {/* ── Full-screen overlay ── hidden by default, toggled by script */}
       <div
+        id="nav-menu-overlay"
         role="dialog"
         aria-modal="true"
-        aria-hidden={!open}
+        aria-label={locale === 'es' ? 'menú de navegación' : 'navigation menu'}
         style={{
-          display: open ? 'flex' : 'none',
+          display: 'none',
           flexDirection: 'column',
           position: 'fixed',
           top: 56,
@@ -127,7 +151,6 @@ export function Nav() {
                     <li key={item.to}>
                       <a
                         href={item.to}
-                        onClick={close}
                         style={{ display: 'block', fontFamily: 'inherit', fontSize: 28, fontWeight: 300, letterSpacing: '-0.02em', textTransform: 'lowercase', color: GRAPHITE, textDecoration: 'none', opacity: 0.55 }}
                         onMouseEnter={e => (e.currentTarget.style.opacity = '1')}
                         onMouseLeave={e => (e.currentTarget.style.opacity = '0.55')}
@@ -149,13 +172,16 @@ export function Nav() {
           </span>
           <button
             type="button"
-            onClick={close}
+            data-close="true"
             style={{ fontFamily: 'inherit', fontSize: 11, letterSpacing: '0.15em', textTransform: 'uppercase', background: 'none', border: 'none', cursor: 'pointer', color: STONE }}
           >
             {locale === 'es' ? 'cerrar' : 'close'} ✕
           </button>
         </div>
       </div>
+
+      {/* Native script — runs immediately, no React dependency */}
+      <script dangerouslySetInnerHTML={{ __html: MENU_SCRIPT }} />
     </>
   );
 }
