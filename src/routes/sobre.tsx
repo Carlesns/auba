@@ -5,9 +5,9 @@ import { useI18n } from '@/lib/i18n';
 export const Route = createFileRoute('/sobre')({
   head: () => ({
     meta: [
-      { title: 'sobre auba — barcelona' },
-      { name: 'description', content: 'Auba significa alba en catalán. Diseñado en Barcelona, fabricado en Portugal. Una marca con propósito real.' },
-      { property: 'og:title', content: 'sobre auba' },
+      { title: 'sobre auva — barcelona' },
+      { name: 'description', content: 'auva significa alba en catalán. Diseñado en Barcelona, fabricado en Catalunya. Una marca con propósito real.' },
+      { property: 'og:title', content: 'sobre auva' },
       { property: 'og:description', content: 'Raíz mediterránea. Pronunciación universal. Decisión de compra consciente.' },
     ],
   }),

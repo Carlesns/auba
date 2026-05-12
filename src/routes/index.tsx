@@ -8,7 +8,7 @@ export const Route = createFileRoute('/')({
   head: () => ({
     meta: [
       { title: 'auva — ropa técnica honesta · barcelona' },
-      { name: 'description', content: 'Ropa técnica honesta. Diseñada en Barcelona. Fabricada en Portugal. Únete a la lista de espera.' },
+      { name: 'description', content: 'Ropa técnica honesta. Diseñada en Barcelona. Fabricada en Catalunya. Únete a la lista de espera.' },
       { property: 'og:title', content: 'auva — ropa técnica honesta' },
       { property: 'og:description', content: 'Ropa honesta. Hecha para sudar y no oler. Dura porque debe durar.' },
     ],

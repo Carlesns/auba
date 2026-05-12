@@ -68,7 +68,7 @@ export const content = {
       specsTitle: 'ficha técnica',
       specs: [
         ['composición', 'merino zq 50% + tencel lyocell 50%'],
-        ['fabricante', 'braga, portugal'],
+        ['fabricante', 'catalunya'],
         ['certificación', 'zq · oeko-tex'],
         ['gramaje', '160 g/m²'],
         ['acabado', 'costuras planas, sin etiquetas exteriores'],
@@ -84,7 +84,7 @@ export const content = {
       breakdownTitle: 'desglose por unidad',
       rows: [
         ['tejido (merino zq + tencel)', '11€'],
-        ['mano de obra · braga, portugal', '6€'],
+        ['mano de obra · catalunya', '6€'],
         ['packaging · papel sin blanquear', '2€'],
         ['logística y envíos', '3€'],
         ['plataforma y operaciones', '3€'],
@@ -95,7 +95,7 @@ export const content = {
         'El margen no son dividendos. Cubre fotografía, registro de marca (OEPM/EUIPO), web, administración y la siguiente tirada. En año 2, sin costes de identidad ni desarrollo, parte de ese margen vuelve al producto.',
       makerTitle: 'fabricante',
       makerBody:
-        'Región de Braga y Porto, Portugal. Mínimos asumibles, alta calidad textil, experiencia con marcas pequeñas y sostenibles. Estamos validando muestras antes de comprometer la tirada de 400 unidades. Cuando cerremos el fabricante, publicaremos el nombre.',
+        'Catalunya. Mínimos asumibles, alta calidad textil, experiencia con marcas pequeñas y sostenibles. Estamos validando muestras antes de comprometer la tirada de 400 unidades. Cuando cerremos el fabricante, publicaremos el nombre.',
     },
     manifesto: {
       title: 'manifiesto',
@@ -116,7 +116,7 @@ export const content = {
     about: {
       title: 'sobre auva',
       lead:
-        'Diseñado en Barcelona. Fabricado en Portugal. Para quien hace deporte con criterio y no quiere pagar por cosas que no ve.',
+        'Diseñado en Barcelona. Fabricado en Catalunya. Para quien hace deporte con criterio y no quiere pagar por cosas que no ve.',
       where: 'barcelona',
       whereBody: '',
       legal: 'registro oepm clase 25 en curso · cobertura euipo prevista 2026',
@@ -193,7 +193,7 @@ export const content = {
       specsTitle: 'specs',
       specs: [
         ['composition', 'merino zq 50% + tencel lyocell 50%'],
-        ['maker', 'braga, portugal'],
+        ['maker', 'catalonia'],
         ['certification', 'zq · oeko-tex'],
         ['weight', '160 g/m²'],
         ['finish', 'flat seams, no exterior labels'],
@@ -209,7 +209,7 @@ export const content = {
       breakdownTitle: 'breakdown per unit',
       rows: [
         ['fabric (merino zq + tencel)', '€11'],
-        ['labor · braga, portugal', '€6'],
+        ['labor · catalonia', '€6'],
         ['packaging · unbleached paper', '€2'],
         ['logistics and shipping', '€3'],
         ['platform and operations', '€3'],
@@ -220,7 +220,7 @@ export const content = {
         'The margin is not dividends. It covers photography, trademark registration (OEPM/EUIPO), the website, administration and the next production run. In year two, with no identity or development costs, part of that margin returns to the product.',
       makerTitle: 'maker',
       makerBody:
-        'Braga and Porto region, Portugal. Manageable minimums, high textile quality, experience with small sustainable brands. We are validating samples before committing to the 400-unit run. We will publish the maker name once selected.',
+        'Catalonia. Manageable minimums, high textile quality, experience with small sustainable brands. We are validating samples before committing to the 400-unit run. We will publish the maker name once selected.',
     },
     manifesto: {
       title: 'manifesto',
@@ -241,7 +241,7 @@ export const content = {
     about: {
       title: 'about auva',
       lead:
-        'Designed in Barcelona. Made in Portugal. For those who train with criteria and refuse to pay for things they cannot see.',
+        'Designed in Barcelona. Made in Catalonia. For those who train with criteria and refuse to pay for things they cannot see.',
       where: 'barcelona',
       whereBody: '',
       legal: 'oepm class 25 registration in progress · euipo coverage planned 2026',

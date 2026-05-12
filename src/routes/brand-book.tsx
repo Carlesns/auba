@@ -5,9 +5,9 @@ import { useI18n } from '@/lib/i18n';
 export const Route = createFileRoute('/brand-book')({
   head: () => ({
     meta: [
-      { title: 'brand book — auba' },
-      { name: 'description', content: 'Manual de identidad de auba: misión, voz, tipografía, paleta, logo y aplicaciones. Versión 1.0.' },
-      { property: 'og:title', content: 'brand book — auba' },
+      { title: 'brand book — auva' },
+      { name: 'description', content: 'Manual de identidad de auva: misión, voz, tipografía, paleta, logo y aplicaciones. Versión 1.0.' },
+      { property: 'og:title', content: 'brand book — auva' },
       { property: 'og:description', content: 'Manual de identidad v1.0. Tres colores, dos tipografías, una decisión.' },
     ],
   }),
@@ -22,7 +22,7 @@ const bb = {
   es: {
     eyebrow: 'manual de identidad · v1.0',
     title: 'brand book',
-    lead: 'Documento vivo. Define cómo auba se ve, suena y se comporta. Si tienes que decidir algo y no está aquí, decide a favor de la honestidad.',
+    lead: 'Documento vivo. Define cómo auva se ve, suena y se comporta. Si tienes que decidir algo y no está aquí, decide a favor de la honestidad.',
     toc: 'índice',
     sections: [
       { id: 'mision', n: '01', label: 'misión' },
@@ -39,7 +39,7 @@ const bb = {
     ],
     mision: {
       title: 'misión',
-      body: 'auba hace ropa técnica honesta para gente que entrena con criterio. Honesta con quien la lleva, con quien la fabrica y con el origen de los materiales.',
+      body: 'auva hace ropa técnica honesta para gente que entrena con criterio. Honesta con quien la lleva, con quien la fabrica y con el origen de los materiales.',
       kpis: [
         { k: 'porqué', v: 'la mayoría paga por imagen o se conforma con el mínimo. queremos una tercera opción.' },
         { k: 'para quién', v: 'deportista que decide con criterio y rechaza pagar por lo que no ve.' },
@@ -49,7 +49,7 @@ const bb = {
     manifiesto: {
       title: 'manifiesto',
       lines: [
-        'auba hace ropa técnica honesta.',
+        'auva hace ropa técnica honesta.',
         'honesta con quien la lleva.',
         'honesta con quien la hace.',
         'honesta con el origen de los materiales.',
@@ -70,7 +70,7 @@ const bb = {
     },
     logo: {
       title: 'logo',
-      body: 'wordmark "auba" en minúsculas, Outfit Light. Sin símbolo, sin escudo, sin tagline anclado. La marca es el nombre.',
+      body: 'wordmark "auva" en minúsculas, Outfit Light. Sin símbolo, sin escudo, sin tagline anclado. La marca es el nombre.',
       rules: [
         'siempre en minúsculas. nunca capitalizado.',
         'espacio mínimo alrededor: la altura de la "a".',
@@ -124,7 +124,7 @@ const bb = {
       ],
       do: [
         'merino zq · 50%',
-        'fabricado en braga, portugal',
+        'fabricado en catalunya',
         'la lana neutraliza el olor',
         '72€ — desglose público',
       ],
@@ -147,12 +147,12 @@ const bb = {
     },
     producto: {
       title: 'producto',
-      lead: 'una sola prenda en lanzamiento. tirada limitada de 400 unidades. fabricada en portugal.',
+      lead: 'una sola prenda en lanzamiento. tirada limitada de 400 unidades. fabricada en catalunya.',
       specs: [
         ['producto', 'camiseta merino / tencel'],
         ['composición', 'merino zq 50% + tencel lyocell 50%'],
         ['gramaje', '160 g/m²'],
-        ['fabricante', 'región de braga, portugal'],
+        ['fabricante', 'región de catalunya'],
         ['certificación', 'zq · oeko-tex'],
         ['acabado', 'costuras planas · sin etiquetas exteriores'],
         ['tirada', '400 unidades'],
@@ -189,7 +189,7 @@ const bb = {
   en: {
     eyebrow: 'visual identity manual · v1.0',
     title: 'brand book',
-    lead: 'A living document. Defines how auba looks, sounds and behaves. When in doubt, decide in favor of honesty.',
+    lead: 'A living document. Defines how auva looks, sounds and behaves. When in doubt, decide in favor of honesty.',
     toc: 'contents',
     sections: [
       { id: 'mision', n: '01', label: 'mission' },
@@ -206,7 +206,7 @@ const bb = {
     ],
     mision: {
       title: 'mission',
-      body: 'auba makes honest technical clothing for people who train with criteria. Honest with the wearer, with the maker, and with the origin of the materials.',
+      body: 'auva makes honest technical clothing for people who train with criteria. Honest with the wearer, with the maker, and with the origin of the materials.',
       kpis: [
         { k: 'why', v: 'most pay for image or settle for the minimum. we want a third option.' },
         { k: 'for whom', v: 'athletes who decide with criteria and refuse to pay for what they cannot see.' },
@@ -216,7 +216,7 @@ const bb = {
     manifiesto: {
       title: 'manifesto',
       lines: [
-        'auba makes honest technical clothing.',
+        'auva makes honest technical clothing.',
         'honest with the wearer.',
         'honest with the maker.',
         'honest about the origin of the materials.',
@@ -237,7 +237,7 @@ const bb = {
     },
     logo: {
       title: 'logo',
-      body: '"auba" wordmark in lowercase, Outfit Light. No symbol, no crest, no fixed tagline. The brand is the name.',
+      body: '"auva" wordmark in lowercase, Outfit Light. No symbol, no crest, no fixed tagline. The brand is the name.',
       rules: [
         'always lowercase. never capitalized.',
         'minimum clear space around: the height of the "a".',
@@ -291,7 +291,7 @@ const bb = {
       ],
       do: [
         'merino zq · 50%',
-        'made in braga, portugal',
+        'made in catalunya',
         'wool neutralizes odor',
         '€72 — public breakdown',
       ],
@@ -314,12 +314,12 @@ const bb = {
     },
     producto: {
       title: 'product',
-      lead: 'one garment at launch. limited run of 400 units. made in portugal.',
+      lead: 'one garment at launch. limited run of 400 units. made in catalunya.',
       specs: [
         ['product', 'merino / tencel t-shirt'],
         ['composition', 'merino zq 50% + tencel lyocell 50%'],
         ['weight', '160 g/m²'],
-        ['maker', 'braga region, portugal'],
+        ['maker', 'catalunya region, catalunya'],
         ['certification', 'zq · oeko-tex'],
         ['finish', 'flat seams · no exterior labels'],
         ['run', '400 units'],
@@ -420,7 +420,7 @@ function BrandBook() {
         <Section id="es-no-es" n="03" title={c.esnoes.title}>
           <div className="grid md:grid-cols-2 gap-px bg-bone-deep">
             <div className="bg-bone p-8">
-              <div className="label-tag text-moss">auba {locale === 'es' ? 'es' : 'is'}</div>
+              <div className="label-tag text-moss">auva {locale === 'es' ? 'es' : 'is'}</div>
               <ul className="mt-6 space-y-3">
                 {c.esnoes.es.map((i) => (
                   <li key={i} className="font-mono text-base lowercase border-b border-bone-deep pb-2">
@@ -430,7 +430,7 @@ function BrandBook() {
               </ul>
             </div>
             <div className="bg-graphite text-bone p-8">
-              <div className="label-tag !text-bone/60">auba {locale === 'es' ? 'no es' : 'is not'}</div>
+              <div className="label-tag !text-bone/60">auva {locale === 'es' ? 'no es' : 'is not'}</div>
               <ul className="mt-6 space-y-3">
                 {c.esnoes.noes.map((i) => (
                   <li key={i} className="font-mono text-base lowercase border-b border-bone/15 pb-2">
@@ -650,7 +650,7 @@ function LogoCard({ variant }: { variant: 'bone' | 'graphite' | 'moss' }) {
       : 'bg-moss text-bone';
   return (
     <div className={`${cls} aspect-[5/2] flex items-center justify-center`}>
-      <span className="text-5xl md:text-6xl font-light lowercase tracking-tight">auba</span>
+      <span className="text-5xl md:text-6xl font-light lowercase tracking-tight">auva</span>
     </div>
   );
 }

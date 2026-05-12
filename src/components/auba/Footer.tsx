@@ -19,7 +19,7 @@ export function Footer() {
           <div><Link to="/sobre" className="hover:text-bone">{t.nav.about}</Link></div>
         </div>
         <div className="space-y-2 label-tag !text-stone">
-          <div>auba © {year}</div>
+          <div>auva © {year}</div>
           <div>barcelona</div>
           <div>{t.footer.legal}</div>
         </div>

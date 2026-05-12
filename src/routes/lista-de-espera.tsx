@@ -6,9 +6,9 @@ import { useI18n } from '@/lib/i18n';
 export const Route = createFileRoute('/lista-de-espera')({
   head: () => ({
     meta: [
-      { title: 'lista de espera — auba' },
-      { name: 'description', content: 'Sé de las primeras en llevar la camiseta auba. Tirada inicial de 400 unidades. Un solo correo cuando esté lista.' },
-      { property: 'og:title', content: 'únete a la lista de espera — auba' },
+      { title: 'lista de espera — auva' },
+      { name: 'description', content: 'Sé de las primeras en llevar la camiseta auva. Tirada inicial de 400 unidades. Un solo correo cuando esté lista.' },
+      { property: 'og:title', content: 'únete a la lista de espera — auva' },
       { property: 'og:description', content: 'Sin spam, sin descuentos. Solo un aviso cuando la primera tirada esté lista.' },
     ],
   }),

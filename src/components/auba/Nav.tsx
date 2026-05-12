@@ -17,7 +17,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-40 bg-bone/85 backdrop-blur supports-[backdrop-filter]:bg-bone/70 border-b border-bone-deep">
       <div className="mx-auto max-w-[1200px] px-6 md:px-10 h-14 flex items-center justify-between">
-        <Link to="/" className="flex items-center" aria-label="auba — home">
+        <Link to="/" className="flex items-center" aria-label="auva — home">
           <Logo className="h-5 w-auto text-graphite" />
         </Link>
         <nav aria-label="primary" className="hidden md:flex items-center gap-8 label-tag">
