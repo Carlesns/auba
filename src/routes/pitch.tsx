@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useEffect, useRef, useState, useCallback } from 'react';
 
 export const Route = createFileRoute('/pitch')({
   head: () => ({
@@ -11,56 +10,55 @@ export const Route = createFileRoute('/pitch')({
   component: Pitch,
 });
 
-const TOTAL = 12;
+const PITCH_SCRIPT = `(function(){
+  var TOTAL=12, cur=0;
+  function show(n){
+    n=Math.max(0,Math.min(TOTAL-1,n));
+    document.querySelectorAll('.p-stage .slide').forEach(function(s,i){
+      s.classList.toggle('active',i===n);
+    });
+    cur=n;
+    var el=document.getElementById('deck-cur');
+    if(el)el.textContent=String(n+1).padStart(2,'0');
+  }
+  function init(){
+    var stage=document.getElementById('p-stage');
+    var vp=document.getElementById('p-vp');
+    if(!stage||!vp)return;
+    function scale(){
+      var s=Math.min(window.innerWidth/1920,window.innerHeight/1080);
+      stage.style.transform='scale('+s+')';
+    }
+    scale();
+    window.addEventListener('resize',scale);
+    show(0);
+    vp.addEventListener('click',function(e){
+      e.clientX/window.innerWidth>0.5?show(cur+1):show(cur-1);
+    });
+    window.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){show(cur+1);e.preventDefault();}
+      else if(e.key==='ArrowLeft'||e.key==='PageUp'){show(cur-1);e.preventDefault();}
+      else if(e.key==='Home')show(0);
+      else if(e.key==='End')show(TOTAL-1);
+    });
+  }
+  document.readyState==='loading'
+    ?document.addEventListener('DOMContentLoaded',init)
+    :init();
+})();`;
 
 function Pitch() {
-  const [slide, setSlide] = useState(0);
-  const stageRef = useRef<HTMLDivElement>(null);
-
-  const show = useCallback((n: number) => {
-    setSlide(Math.max(0, Math.min(TOTAL - 1, n)));
-  }, []);
-
-  // scale to fit viewport
-  useEffect(() => {
-    const scale = () => {
-      if (!stageRef.current) return;
-      const s = Math.min(window.innerWidth / 1920, window.innerHeight / 1080);
-      stageRef.current.style.transform = `scale(${s})`;
-    };
-    scale();
-    window.addEventListener('resize', scale);
-    return () => window.removeEventListener('resize', scale);
-  }, []);
-
-  // keyboard navigation
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { show(slide + 1); e.preventDefault(); }
-      else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { show(slide - 1); e.preventDefault(); }
-      else if (e.key === 'Home') show(0);
-      else if (e.key === 'End') show(TOTAL - 1);
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [slide, show]);
-
-  const onClick = (e: React.MouseEvent) => {
-    const x = e.clientX / window.innerWidth;
-    if (x > 0.5) show(slide + 1); else show(slide - 1);
-  };
-
-  const s = (n: number) => slide === n - 1;
+  // All navigation handled by PITCH_SCRIPT — no React state needed
   const num = (n: number) => String(n).padStart(2, '0');
 
   return (
     <>
       <style>{css}</style>
-      <div className="p-vp" onClick={onClick}>
-        <div className="p-stage" ref={stageRef}>
+      <div id="p-vp" className="p-vp">
+        <div id="p-stage" className="p-stage">
 
-          {/* 01 — COVER */}
-          <section className={`slide cover${s(1) ? ' active' : ''}`}>
+          {/* 01 — COVER — starts active, script takes over after load */}
+          <section className="slide cover active">
             <div className="chrome-top">
               <span className="left">AUVA · Ropa técnica honesta</span>
               <span className="center">Reimagine Textile · Mayo 2026</span>
@@ -84,7 +82,7 @@ function Pitch() {
           </section>
 
           {/* 02 — EL NOMBRE */}
-          <section className={`slide nombre${s(2) ? ' active' : ''}`}>
+          <section className="slide nombre">
             <div className="chrome-top">
               <span className="left">AUVA</span><span className="center">El nombre</span><span className="right">02 / 12</span>
             </div>
@@ -122,7 +120,7 @@ function Pitch() {
           </section>
 
           {/* 03 — EL PROBLEMA */}
-          <section className={`slide problema${s(3) ? ' active' : ''}`}>
+          <section className="slide problema">
             <div className="chrome-top"><span className="left">AUVA</span><span className="center">El problema</span><span className="right">03 / 12</span></div>
             <div className="slide-body">
               <div className="slide-header">
@@ -140,7 +138,7 @@ function Pitch() {
           </section>
 
           {/* 04 — LA SOLUCIÓN */}
-          <section className={`slide solucion${s(4) ? ' active' : ''}`}>
+          <section className="slide solucion">
             <div className="chrome-top"><span className="left">AUVA</span><span className="center">La solución</span><span className="right">04 / 12</span></div>
             <div className="slide-body">
               <div className="slide-header">
@@ -158,7 +156,7 @@ function Pitch() {
           </section>
 
           {/* 05 — EL PRODUCTO */}
-          <section className={`slide producto${s(5) ? ' active' : ''}`}>
+          <section className="slide producto">
             <div className="chrome-top"><span className="left">AUVA</span><span className="center">El producto</span><span className="right">05 / 12</span></div>
             <div className="slide-body">
               <div className="slide-header" style={{marginBottom:24}}>
@@ -193,7 +191,7 @@ function Pitch() {
           </section>
 
           {/* 06 — EL MERCADO */}
-          <section className={`slide mercado${s(6) ? ' active' : ''}`}>
+          <section className="slide mercado">
             <div className="chrome-top"><span className="left">AUVA</span><span className="center">El mercado</span><span className="right">06 / 12</span></div>
             <div className="slide-body" style={{paddingBottom:80}}>
               <div className="slide-header" style={{marginBottom:0}}>
@@ -225,7 +223,7 @@ function Pitch() {
           </section>
 
           {/* 07 — MODELO DE NEGOCIO */}
-          <section className={`slide modelo${s(7) ? ' active' : ''}`}>
+          <section className="slide modelo">
             <div className="chrome-top"><span className="left">AUVA</span><span className="center">Modelo de negocio</span><span className="right">07 / 12</span></div>
             <div className="slide-body">
               <div className="slide-header">
@@ -254,7 +252,7 @@ function Pitch() {
           </section>
 
           {/* 08 — FABRICACIÓN */}
-          <section className={`slide fab${s(8) ? ' active' : ''}`}>
+          <section className="slide fab">
             <div className="chrome-top"><span className="left">AUVA</span><span className="center">Fabricación honesta</span><span className="right">08 / 12</span></div>
             <div className="slide-body">
               <div className="slide-header">
@@ -276,7 +274,7 @@ function Pitch() {
           </section>
 
           {/* 09 — DÓNDE ESTAMOS */}
-          <section className={`slide estado${s(9) ? ' active' : ''}`}>
+          <section className="slide estado">
             <div className="chrome-top"><span className="left">AUVA</span><span className="center">Dónde estamos hoy</span><span className="right">09 / 12</span></div>
             <div className="slide-body">
               <div className="slide-header">
@@ -306,7 +304,7 @@ function Pitch() {
           </section>
 
           {/* 10 — MANIFIESTO */}
-          <section className={`slide manifest${s(10) ? ' active' : ''}`}>
+          <section className="slide manifest">
             <div className="chrome-top"><span className="left">AUVA</span><span className="center">Manifiesto</span><span className="right">10 / 12</span></div>
             <div className="slide-body">
               <div className="body-wrap">
@@ -336,7 +334,7 @@ function Pitch() {
           </section>
 
           {/* 11 — LA WEB */}
-          <section className={`slide web${s(11) ? ' active' : ''}`}>
+          <section className="slide web">
             <div className="chrome-top"><span className="left">AUVA</span><span className="center">La web</span><span className="right">11 / 12</span></div>
             <div className="slide-body">
               <div className="slide-header">
@@ -359,7 +357,7 @@ function Pitch() {
           </section>
 
           {/* 12 — QUÉ NECESITAMOS */}
-          <section className={`slide ask${s(12) ? ' active' : ''}`}>
+          <section className="slide ask">
             <div className="chrome-top"><span className="left">AUVA</span><span className="center">Qué necesitamos de Reimagine</span><span className="right">12 / 12</span></div>
             <div className="slide-body">
               <div className="slide-header">
@@ -385,8 +383,9 @@ function Pitch() {
         </div>
       </div>
       <div className="deck-count">
-        <span className="cur">{num(slide + 1)}</span> / {num(TOTAL)}
+        <span id="deck-cur" className="cur">01</span> / {num(12)}
       </div>
+      <script dangerouslySetInnerHTML={{ __html: PITCH_SCRIPT }} />
     </>
   );
 }
