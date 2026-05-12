@@ -1,5 +1,3 @@
-import { useEffect, useRef, useState } from "react";
-
 type Row = {
   label: string;
   antiOlor: boolean | "partial";
@@ -10,17 +8,17 @@ type Row = {
 };
 
 const rows: Row[] = [
-  { label: "low cost",       antiOlor: false, purpose: false,     traceable: false,     fairPrice: true  },
-  { label: "grandes marcas", antiOlor: false, purpose: false,     traceable: false,     fairPrice: false },
-  { label: "técnico premium",antiOlor: true,  purpose: "partial", traceable: "partial", fairPrice: false },
-  { label: "auva",           antiOlor: true,  purpose: true,      traceable: true,      fairPrice: true, isAuba: true },
+  { label: "low cost",        antiOlor: false, purpose: false,     traceable: false,     fairPrice: true  },
+  { label: "grandes marcas",  antiOlor: false, purpose: false,     traceable: false,     fairPrice: false },
+  { label: "técnico premium", antiOlor: true,  purpose: "partial", traceable: "partial", fairPrice: false },
+  { label: "auva",            antiOlor: true,  purpose: true,      traceable: true,      fairPrice: true, isAuba: true },
 ];
 
 const attrs = [
-  { key: "antiOlor" as const, label: "anti-olor"   },
-  { key: "purpose"  as const, label: "propósito"   },
-  { key: "traceable"as const, label: "trazable"    },
-  { key: "fairPrice"as const, label: "precio justo"},
+  { key: "antiOlor"  as const, label: "anti-olor"    },
+  { key: "purpose"   as const, label: "propósito"    },
+  { key: "traceable" as const, label: "trazable"     },
+  { key: "fairPrice" as const, label: "precio justo" },
 ];
 
 function Dot({ value, isAuba }: { value: boolean | "partial"; isAuba?: boolean }) {
@@ -44,30 +42,14 @@ function Dot({ value, isAuba }: { value: boolean | "partial"; isAuba?: boolean }
 }
 
 export function ComparisonSection() {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    // Trigger immediately if already in viewport, else observe
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
-      { threshold: 0.05 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section ref={ref} style={{ padding: "96px 0", background: "#F2F0EB" }}>
+    <section style={{ padding: "96px 0", background: "#F2F0EB" }}>
       <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 24px" }}>
 
         <p style={{
           fontFamily: "'DM Mono', monospace", fontSize: 11,
           letterSpacing: "0.15em", textTransform: "uppercase",
           color: "#7F8C8D", marginBottom: 48,
-          opacity: visible ? 1 : 0, transition: "opacity 0.5s ease",
         }}>
           dónde está auva
         </p>
@@ -78,13 +60,11 @@ export function ComparisonSection() {
           paddingBottom: 16, borderBottom: "1px solid #D5D0C8", marginBottom: 8,
         }}>
           <div />
-          {attrs.map((a, i) => (
+          {attrs.map((a) => (
             <div key={a.key} style={{
               fontFamily: "'DM Mono', monospace", fontSize: 10,
               letterSpacing: "0.1em", textTransform: "uppercase",
               color: "#7F8C8D", textAlign: "center",
-              opacity: visible ? 1 : 0,
-              transition: `opacity 0.4s ease ${i * 0.06}s`,
             }}>
               {a.label}
             </div>
@@ -92,13 +72,11 @@ export function ComparisonSection() {
         </div>
 
         {/* Filas */}
-        {rows.map((row, rowIndex) => (
+        {rows.map((row) => (
           <div key={row.label} style={{
             display: "grid", gridTemplateColumns: "160px repeat(4, 1fr)",
             padding: "20px 0", alignItems: "center",
             borderBottom: row.isAuba ? "none" : "1px solid #E8E4DC",
-            opacity: visible ? 1 : 0,
-            transition: `opacity 0.4s ease ${0.1 + rowIndex * 0.08}s`,
           }}>
             <div style={{
               fontFamily: row.isAuba ? "'Outfit', sans-serif" : "'DM Mono', monospace",
@@ -121,7 +99,6 @@ export function ComparisonSection() {
         <p style={{
           fontFamily: "'DM Mono', monospace", fontSize: 10,
           color: "#A0998E", marginTop: 32, letterSpacing: "0.08em",
-          opacity: visible ? 1 : 0, transition: "opacity 0.4s ease 0.5s",
         }}>
           círculo lleno: sí · círculo vacío: no · punto interior: parcial
         </p>
